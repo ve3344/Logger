@@ -1,0 +1,30 @@
+apply plugin: 'maven-publish'
+
+group 'com.github.ve3344'
+version '1.0.0'
+task sourcesJar(type: Jar) {
+    from sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+afterEvaluate {
+
+    publishing {
+        publications {
+            library(MavenPublication) {
+                from components.java
+                artifact sourcesJar
+                artifactId 'logger'
+            }
+        }
+        repositories {
+            mavenLocal()
+            maven {
+                name = 'PublicLib'
+                url = "file://H:/PublicLib"
+            }
+        }
+    }
+
+
+}

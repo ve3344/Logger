@@ -1,0 +1,5 @@
+apply plugin: 'maven'
+
+
+group 'com.github.ve3344'
+
