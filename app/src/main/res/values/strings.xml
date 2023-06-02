@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoggerDemo</string>
+    <string-array name="level">
+        <item >verbose</item>
+        <item >debug</item>
+        <item >info</item>
+        <item >warm</item>
+        <item >error</item>
+        <item >wtf</item>
+    </string-array>
+</resources>

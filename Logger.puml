@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+enum LogLevel {
+    VERBOSE("V"),
+    DEBUG("D"),
+    INFO("I"),
+    WARNING("W"),
+    ERROR("E"),
+    WTF("WTF")
+}
+class Logger{
+    + var tag: String
+    + var level: LogLevel
+    + var logPrinter: LogPrinter
+    + fun v()
+    + fun d()
+    + fun i()
+    + fun w()
+    + fun e()
+    + fun wtf()
+}
+interface LogPrinter {
+    + fun log()
+}
+LogPrinter -- Logger::logPrinter
+LogLevel -- Logger::level
+
+
+class AndroidLogPrinter extends LogPrinter
+@enduml
